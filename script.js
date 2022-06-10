@@ -14,6 +14,12 @@ $("#form-supply").submit((e) => {
   printMessege(data);
 });
 
+// CLEAR FORM //
+$("#clear-button").click(() => {
+  $("#form-supply").trigger("reset");
+  $("#info-container").hide();
+});
+
 // FUNCTION //
 function checkFormIsNotEmpty() {
   let filled = false;
@@ -27,8 +33,8 @@ function checkFormIsNotEmpty() {
     else filled = true;
   });
 
-  if (filled && checked) $("button").attr("disabled", false);
-  else $("button").attr("disabled", true);
+  if (filled && checked) $("#submit-button").attr("disabled", false);
+  else $("#submit-button").attr("disabled", true);
 }
 
 function checkDiscount(data) {
